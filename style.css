@@ -1,0 +1,80 @@
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  font-family: "Courier New", Courier, monospace;
+  font-style: oblique;
+}
+.drop {
+  position: relative;
+  margin: 0;
+  height: 200px;
+  width: 200px;
+  background: #54abfb;
+  border-radius: 51% 49% 48% 52% / 62% 44% 56% 38%;
+  opacity: 0.8;
+  border: 2px solid #3d93ff;
+  animation: wobble 1s linear infinite alternate;
+}
+
+.drop::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #318cfe;
+  border-radius: 51% 49% 48% 52% / 62% 44% 56% 38%;
+  box-shadow: -20px 30px 16px #1b6cfb, -40px 60px 32px #1b6cfb,
+    inset -6px 6px 10px #1b6cfb, inset 2px 6px 10px #1a74e5,
+    inset 20px -20px 22px white, inset 40px -40px 44px #a8ceff;
+  animation: wobble 3s linear infinite alternate;
+}
+
+.drop::after {
+  content: "";
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  background: #e6fdfb;
+  border-radius: 44% 56% 46% 54% / 36% 50% 50% 64%;
+  left: 130px;
+  top: 40px;
+  box-shadow: 16px 40px 0 -10px white;
+  opacity: 0.8;
+  animation: shine 2s linear infinite alternate;
+}
+
+@keyframes wobble {
+  0% {
+    border-radius: 51% 49% 48% 52% / 62% 44% 56% 38%;
+  }
+  50% {
+    border-radius: 46% 53% 42% 59% / 58% 48% 50% 43%;
+  }
+  100% {
+    border-radius: 41% 57% 38% 65% / 54% 58% 46% 48%;
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: 130px;
+    top: 40px;
+  }
+  50% {
+    left: 125px;
+    top: 44px;
+  }
+  100% {
+    left: 127px;
+    top: 38px;
+  }
+}
